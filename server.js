@@ -32,13 +32,10 @@ app.use(servicio)
 
 const dbConnect = require('./config/mongo')
 
+dbConnect()
+
 const port = process.env.PORT || 3000
 
-
-
-
 app.listen(port, function() {
-    console.log('App  lista en', port)
+    console.log("App  lista en", port)
 })
-
-dbConnect()
