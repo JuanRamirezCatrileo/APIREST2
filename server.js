@@ -37,8 +37,8 @@ const port = process.env.PORT || 3000
 
 
 
-app.listen(port, () => {
-    console.log('App  lista por http://localhost:'+port)
+app.listen(port, function() {
+    console.log('App  lista en', port)
 })
 
 dbConnect()
