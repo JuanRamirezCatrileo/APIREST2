@@ -16,7 +16,6 @@ const validateReservaCreada = [
         .not(),
     check ('hora')
         .exists()
-        .isNumeric()
         .not(),
     check ('servicio')
         .exists()
