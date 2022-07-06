@@ -13,11 +13,14 @@ const parseId = (id) => {
 
 //get
 exports.getData = (req, res) => {
-    model.paginate({}, options, (err, docs) => {
-      res.send({
-          items:docs 
-      })
-  })
+    const { id } = req.params
+    model.paginate(
+        { _id: parseId(id) },
+        (err, docs) => {
+            res.send({
+                items: docs
+            })
+        })
 }
 //post
 exports.insertData = (req, res) => {
