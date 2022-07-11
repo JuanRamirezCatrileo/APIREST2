@@ -19,7 +19,7 @@ router.get('/reserva/:nombre_servicio/', function(req, res) {
         if (err) {
             return res.json({
                 success: false,
-                msj: 'No se encontró ningún servicio con ese correo',
+                msj: 'No se encontró ningún servicio',
                 err
             });
         } else {
