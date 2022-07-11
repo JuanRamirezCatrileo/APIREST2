@@ -13,6 +13,28 @@ router.get(
     controller.getData
 )
 
+router.get(`/${path}`, function(req, res) {
+
+        let nombre_servicio = req.query.nombre_servicio;
+
+        reserva.find({ nombre_servicio: nombre_servicio }, function(err, dbConnect) {
+            if (err) {
+                return res.json({
+                    success: false,
+                    msj: 'No se encontró ningún servicio',
+                    err
+                });
+            } else {
+                return res.json({
+                    success: true,
+                    reserva: dbConnect
+                });
+            }
+    })
+    controller.getData    
+});
+    
+
 router.post(
     `/${path}`, validateReserva,
     controller.insertData);
