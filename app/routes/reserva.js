@@ -4,6 +4,8 @@ const controller = require('../controllers/reserva')
 
 const router = express.Router()
 
+const reserva = require('../models/reserva')
+
 const {validateReserva} = require ('../validators/reserva')
 
 const path = 'reserva'
