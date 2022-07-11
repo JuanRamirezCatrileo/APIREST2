@@ -17,8 +17,8 @@ router.get(
 
 router.get('/reserva2', function(req, res) {
     let nombre_servicio = req.query.nombre_servicio;
-    let hora = req.query.hora;
-    reserva.find({ nombre_servicio: nombre_servicio, hora }, function(err, dbConnect) {
+    let fecha = req.query.fecha;
+    reserva.find({ nombre_servicio: nombre_servicio, fecha }, function(err, dbConnect) {
         if (err) {
             return res.json({
                 success: false,
