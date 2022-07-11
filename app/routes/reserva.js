@@ -13,24 +13,22 @@ router.get(
     controller.getData
 )
 
-router.get('/nombre_servicio/:nombre_servicio', function(req, res) {
-
-        let nombre_servicio = req.params.nombre_servicio;
-
-        reserva.find({ nombre_servicio: nombre_servicio }, function(err, dbConnect) {
-            if (err) {
-                return res.json({
-                    success: false,
-                    msj: 'No se encontró ningún servicio',
-                    err
-                });
-            } else {
-                return res.json({
-                    success: true,
-                    reserva: dbConnect
-                });
-            }
-    })   
+router.get('/reserva/:nombre_servicio/', function(req, res) {
+    let nombre_servicio = req.params.nombre_servicio;
+    reserva.find({ nombre_servicio: nombre_servicio }, function(err, dbConnect) {
+        if (err) {
+            return res.json({
+                success: false,
+                msj: 'No se encontró ningún servicio con ese correo',
+                err
+            });
+        } else {
+            return res.json({
+                success: true,
+                cliente: dbConnect
+            });
+        }
+    })
 });
     
 
