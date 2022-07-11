@@ -15,19 +15,20 @@ router.get(
     controller.getData
 )
 
-router.get('/reserva/:nombre_servicio/', function(req, res) {
-    let nombre_servicio = req.params.nombre_servicio;
-    reserva.find({ nombre_servicio: nombre_servicio }, function(err, dbConnect) {
+router.get('/reserva2', function(req, res) {
+    let nombre_servicio = req.query.nombre_servicio;
+    let hora = req.query.hora;
+    reserva.find({ nombre_servicio: nombre_servicio, hora }, function(err, dbConnect) {
         if (err) {
             return res.json({
                 success: false,
-                msj: 'No se encontró ningún servicio',
+                msj: 'No se encontraron los datos',
                 err
             });
         } else {
             return res.json({
                 success: true,
-                cliente: dbConnect
+                reserva: dbConnect
             });
         }
     })
