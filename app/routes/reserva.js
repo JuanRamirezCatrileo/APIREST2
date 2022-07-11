@@ -13,9 +13,9 @@ router.get(
     controller.getData
 )
 
-router.get('/nombre_servicio', function(req, res) {
+router.get('/nombre_servicio/:nombre_servicio', function(req, res) {
 
-        let nombre_servicio = req.query.nombre_servicio;
+        let nombre_servicio = req.params.nombre_servicio;
 
         reserva.find({ nombre_servicio: nombre_servicio }, function(err, dbConnect) {
             if (err) {
@@ -30,8 +30,7 @@ router.get('/nombre_servicio', function(req, res) {
                     reserva: dbConnect
                 });
             }
-    })
-    controller.getData    
+    })   
 });
     
 
