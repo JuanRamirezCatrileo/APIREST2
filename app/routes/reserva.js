@@ -13,7 +13,7 @@ router.get(
     controller.getData
 )
 
-router.get(`/${path}`, function(req, res) {
+router.get('nombre_servicio', function(req, res) {
 
         let nombre_servicio = req.query.nombre_servicio;
 
