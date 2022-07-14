@@ -1,12 +1,12 @@
 const express= require('express')
 
-const controller = require('../controllers/user')
+const controller = require('../controllers/login')
 
 const router = express.Router()
 
-const { validateCreate } = require('../validators/user')
+const { validateCreate } = require('../validators/login')
 
-const path = 'user'
+const path = 'login'
 
 router.get(
     `/${path}`,
@@ -18,15 +18,5 @@ router.post(
     controller.insertData
     );
 
-
-    router.put(
-        `/${path}/:id`,
-        controller.updateSingle
-    )
-
-router.delete(
-    `/${path}/:id`,
-    controller.deleteSingle
-)
 
 module.exports = router
