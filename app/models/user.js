@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 const mongoosePaginate = require('mongoose-paginate-v2')
 
-const UserScheme = new mongoose.Schema(
+const LoginScheme = new mongoose.Schema(
     {
     correo:{
     type:String,
@@ -18,5 +18,5 @@ const UserScheme = new mongoose.Schema(
         versionKey:false
     }
 );
-UserScheme.plugin(mongoosePaginate)
-module.exports = mongoose.model("user", UserScheme)
+LoginScheme.plugin(mongoosePaginate)
+module.exports = mongoose.model("login", LoginScheme)
