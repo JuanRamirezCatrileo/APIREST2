@@ -4,11 +4,10 @@ const {validateResult} =require ('../helpers/validateHelper')
 const validateCreate = [
     check ('correo')
         .exists()
-        .not()
-        .isEmail(),
-    check ('password')
-        .exists()
+        .isEmail()
         .not(),
+    check ('password')
+        .exists(),
     (req, res, next) =>{
         validateResult (req, res, next)
     }
