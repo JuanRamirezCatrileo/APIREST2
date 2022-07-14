@@ -3,7 +3,7 @@ const router = express.Router()
 
 const routes = [
     {
-        path: 'user'
+        path: 'login'
     },
     {
         path: 'servicio'
@@ -12,7 +12,7 @@ const routes = [
         path: 'reservaCreada'
     },
     {
-        path: 'registro'
+        path: 'reserva'
     }
 ]
 
